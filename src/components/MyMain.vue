@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <main class="p-3">
 
-        <div class="container d-flex">
+        <div class="container d-flex flex-wrap justify-content-center">
 
-            <MyDisk class="" v-for="(musicDisk, index) in musicDiskList" :key="index" :musicDisk="musicDisk"/>
+            <MyDisk class="m-2 text-center" v-for="(musicDisk, index) in musicDiskList" :key="index" :musicDisk="musicDisk"/>
 
         </div>
   </main>
