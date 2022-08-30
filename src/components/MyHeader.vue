@@ -5,11 +5,9 @@
     </div>
 
     <div class="search">
-      <select class="form-select" aria-label="Default select example">
+      <select class="form-select" aria-label="Default select example" @change="$emit('changeGenre', 'genreSelected')" v-model="genreSelected">
         <option selected>Seleziona genere</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option v-for="(genre, index) in genreList" :key="index" :value="genre">{{genre}}</option>
       </select>
     </div>
   </header>
@@ -18,7 +16,15 @@
 <script>
 export default {
     name: "MyHeader.vue",
-}
+    props:{
+      genreList: Array,
+    },
+    data(){
+      return{
+        genreSelected: ""
+      }
+    }
+};
 
 </script>
 
